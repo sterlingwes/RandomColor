@@ -16,6 +16,7 @@
 	var RColor = function() {
 		this.hue			= Math.random(),
 		this.goldenRatio 	= 0.618033988749895;
+		this.hexwidth		= 2;
 	};
 
 	RColor.prototype.hsvToRgb = function (h,s,v) {
@@ -38,6 +39,11 @@
 		return [Math.floor(r*256),Math.floor(g*256),Math.floor(b*256)];
 	};
 	
+	RColor.prototype.padHex = function(str) {
+		if(str.length > this.hexwidth) return str;
+		return new Array(this.hexwidth - str.length + 1).join('0') + str;
+	};
+	
 	RColor.prototype.get = function(hex,saturation,value) {
 		this.hue += this.goldenRatio;
 		this.hue %= 1;
@@ -45,7 +51,9 @@
 		if(typeof value !== "number")		value = 0.95;
 		var rgb = this.hsvToRgb(this.hue,saturation,value);
 		if(hex)
-			return "#"+rgb[0].toString(16)+rgb[1].toString(16)+rgb[2].toString(16);
+			return "#" +  this.padHex(rgb[0].toString(16))
+						+ this.padHex(rgb[1].toString(16))
+						+ this.padHex(rgb[2].toString(16));
 		else 
 			return rgb;
 	};
