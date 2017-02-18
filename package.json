@@ -5,8 +5,10 @@
   "main": "rcolor.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register src/*test.js",
-    "cover": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "cover": "nyc npm test && nyc report --reporter=text-lcov --reporter=lcov",
+    "coveralls": "npm run cover | coveralls"
   },
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sterlingwes/RandomColor.git"
@@ -22,6 +24,7 @@
     "babel-preset-env": "^1.1.8",
     "coveralls": "^2.11.16",
     "mocha-lcov-reporter": "^1.2.0",
-    "nyc": "^10.1.2"
+    "nyc": "^10.1.2",
+    "webpack": "^2.2.1"
   }
 }

@@ -23,8 +23,7 @@ const colors = [ // hsv, rgb
 
 describe('rcolor', function () {
   it('should return hex colors by default', function () {
-    const color = rcolor()
-    const hex = color()
+    const hex = rcolor()
     expect(/^#[a-z0-9]{6}/.test(hex)).to.be(true)
   })
 
@@ -43,15 +42,6 @@ describe('rcolor', function () {
     it('should not pad if greater than 2', () => {
       const padHex = require('./padHex')
       expect(padHex('000')).to.be('000')
-    })
-  })
-
-  describe('assign', () => {
-    it('should mutate source object', () => {
-      const assign = require('./assign')
-      let obj = {}
-      assign(obj, { hello: 'world' })
-      expect(obj).to.eql({ hello: 'world' })
     })
   })
 })
