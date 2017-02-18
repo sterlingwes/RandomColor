@@ -5,8 +5,7 @@ const config = {
   entry: './src',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'rcolor.js',
-    library: 'rcolor'
+    filename: 'rcolor.js'
   },
   module: {
     loaders: [
@@ -24,7 +23,10 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.UglifyJsPlugin()
   ]
 
-  config.output.filename = 'rcolor.min.js'
+  Object.assign(config.output, {
+    filename: 'rcolor.min.js',
+    library: 'rcolor'
+  })
 }
 
 module.exports = config
