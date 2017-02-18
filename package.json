@@ -1,0 +1,27 @@
+{
+  "name": "rcolor",
+  "version": "1.0.0",
+  "description": "Random color is a simple javascript module for generating random colors that contrast enough to distinguish between one another, and are not too loud (by default, all colours can have readable black/dark font overlayed).",
+  "main": "rcolor.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register src/*test.js",
+    "cover": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sterlingwes/RandomColor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sterlingwes/RandomColor/issues"
+  },
+  "homepage": "https://github.com/sterlingwes/RandomColor#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.1.8",
+    "coveralls": "^2.11.16",
+    "mocha-lcov-reporter": "^1.2.0",
+    "nyc": "^10.1.2"
+  }
+}
