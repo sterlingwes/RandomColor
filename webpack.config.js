@@ -5,7 +5,8 @@ const config = {
   entry: './src',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'rcolor.js'
+    filename: 'rcolor.js',
+    libraryTarget: 'commonjs2'
   },
   module: {
     loaders: [
@@ -25,7 +26,8 @@ if (process.env.NODE_ENV === 'production') {
 
   Object.assign(config.output, {
     filename: 'rcolor.min.js',
-    library: 'rcolor'
+    library: 'rcolor',
+    libraryTarget: 'var'
   })
 }
 
