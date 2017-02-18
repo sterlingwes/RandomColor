@@ -6,7 +6,49 @@ Random color is a simple javascript module for generating random colors that con
 
 Useful, for example, in charts and diagrams where X number of series need to be distinguished by color.
 
+## Getting it
 
+### Node.js
+`npm install rcolor`
+
+### Browser
+Clone this repo / copy `dist/rcolor.min.js`
+
+*Note* that the `dist/rcolor.js` file is a CommonJS export (the node.js build)
+
+## Using it
+
+With the browser build:
+
+```
+window.rcolor()
+// > "#79f2ab"
+```
+
+With the node build:
+
+```
+const color = require('rcolor')
+color() // "#79f2ab"
+```
+
+## Options / Configuration
+
+You can specify the `hue`, `saturation` and `value`. The following are the defaults:
+
+```
+const goldenRatio = 0.618 // ... truncated
+
+rcolor({
+  hue: (Math.random() + goldenRatio) % 1,
+  saturation: 0.5,
+  value: 0.95
+})
+```
+
+## Pre-v1.0
+
+If you used this module prior to NPM availability (between 2013 and 2017), you can find that source (including the Dart version) on the [legacy branch](https://github.com/sterlingwes/RandomColor/tree/legacy).
 
 ## License
 
