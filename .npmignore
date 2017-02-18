@@ -1,0 +1,12 @@
+src/
+example/
+
+.babelrc
+.travis.yml
+Readme.md
+
+# the following should match .gitignore
+.nyc_output/
+coverage/
+node_modules/
+.coveralls.yml

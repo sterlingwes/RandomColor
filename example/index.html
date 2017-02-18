@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rcolor example</title>
+    <style>
+      /* example styles */
+      html, body {
+        margin: 0; padding: 0;
+        font-family: Courier New, Courier, monospace;
+        font-weight: 100;
+        text-transform: uppercase
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .colorbar {
+        display: flex;
+        flex: 1;
+        font-size: 3rem;
+        text-align: center;
+      }
+
+      .colorbar-text {
+        margin: auto
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+
+    </div>
+    <script src="../dist/rcolor.js"></script>
+    <script>
+      var container = document.getElementById('container')
+
+      generate()
+
+      setInterval(() => {
+        reset()
+        generate()
+      }, 1000)
+
+      function generate () {
+        var colors = [
+          rcolor(),
+          rcolor(),
+          rcolor(),
+          rcolor(),
+          rcolor()
+        ]
+
+        colors.forEach(color => {
+          container.appendChild(makeDiv(color))
+        })
+      }
+
+      function reset () {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+      }
+
+      function makeDiv (colorHex) {
+        var div = document.createElement('div')
+        div.className = 'colorbar'
+        div.style.backgroundColor = colorHex
+
+        var p = document.createElement('p')
+        p.className = 'colorbar-text'
+        p.innerText = colorHex
+
+        div.appendChild(p)
+
+        return div
+      }
+    </script>
+  </body>
+</html>
