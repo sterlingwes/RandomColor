@@ -20,14 +20,14 @@ Clone this repo / copy `dist/rcolor.min.js`
 
 With the browser build:
 
-```
+```javascript
 window.rcolor()
 // > "#79f2ab"
 ```
 
 With the node build:
 
-```
+```javascript
 const color = require('rcolor')
 color() // "#79f2ab"
 ```
@@ -36,7 +36,7 @@ color() // "#79f2ab"
 
 You can specify the `hue`, `saturation` and `value`. The following are the defaults:
 
-```
+```javascript
 const goldenRatio = 0.618 // ... truncated
 
 rcolor({
