@@ -143,15 +143,25 @@ var hsvToRgb = __webpack_require__(0);
 var rgbToHex = __webpack_require__(1);
 var goldenRatio = 0.618033988749895;
 
+var randomSeed = void 0;
+
+seedRandom();
+
+function seedRandom() {
+  randomSeed = Math.random();
+}
+
 function getRgb() {
   var inputs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var hue = inputs.hue,
       saturation = inputs.saturation,
       value = inputs.value;
 
-  if (!hue) hue = Math.random();
-  hue += goldenRatio;
-  hue %= 1;
+  if (typeof hue === 'undefined') {
+    randomSeed += goldenRatio;
+    randomSeed %= 1;
+    hue = randomSeed;
+  }
 
   if (typeof saturation !== 'number') saturation = 0.5;
   if (typeof value !== 'number') value = 0.95;
@@ -163,6 +173,8 @@ function getHex(opts, inputs) {
   var rgb = getRgb(opts, inputs);
   return rgbToHex(rgb);
 }
+
+getHex.reSeed = seedRandom;
 
 module.exports = getHex;
 
