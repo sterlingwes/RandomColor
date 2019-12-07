@@ -16,7 +16,6 @@ function getRgb (inputs = {}) {
     randomSeed += goldenRatio
     randomSeed %= 1
     hue = randomSeed
-    hue = randomSeed
   }
 
   if (typeof saturation !== 'number') saturation = 0.5
