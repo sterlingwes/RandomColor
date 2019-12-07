@@ -4,7 +4,7 @@
 
 Random color is a simple javascript module for generating random colors that contrast enough to distinguish between one another, and are not too loud (by default, all colours can have readable black/dark font overlayed).
 
-[Example](https://cdn.rawgit.com/sterlingwes/RandomColor/dbf55623/example/index.html)
+[Example](https://cdn.rawgit.com/sterlingwes/RandomColor/5a65e8ff/example/index.html)
 
 Useful, for example, in charts and diagrams where X number of series need to be distinguished by color.
 
