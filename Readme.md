@@ -8,6 +8,8 @@ Random color is a simple javascript module for generating random colors that con
 
 Useful, for example, in charts and diagrams where X number of series need to be distinguished by color.
 
+[See changelog](/CHANGELOG.md).
+
 ## Getting it
 
 ### Node.js
@@ -30,9 +32,11 @@ window.rcolor()
 With the node build:
 
 ```javascript
-const color = require('rcolor')
-color() // "#79f2ab"
+const rcolor = require('rcolor')
+rcolor() // "#79f2ab"
 ```
+
+This module holds the initial random number seed as internal state. To regenerate the random number seed, call the `reSeed` method: `rcolor.reSeed()`.
 
 ## Options / Configuration
 
