@@ -9,7 +9,8 @@
     "build-min": "NODE_ENV=production webpack",
     "test": "mocha --compilers js:babel-register src/*test.js",
     "cover": "nyc npm test && nyc report --reporter=text-lcov --reporter=lcov",
-    "coveralls": "npm run cover | coveralls"
+    "coveralls": "npm run cover | coveralls",
+    "format": "prettier --write src/**"
   },
   "files": [
     "dist"
@@ -19,7 +20,14 @@
     "url": "git+https://github.com/sterlingwes/RandomColor.git"
   },
   "keywords": [
-    "random", "color", "colour", "goldenratio", "golden ratio", "graph", "chart", "series"
+    "random",
+    "color",
+    "colour",
+    "goldenratio",
+    "golden ratio",
+    "graph",
+    "chart",
+    "series"
   ],
   "author": "",
   "license": "ISC",
@@ -36,6 +44,7 @@
     "mocha": "^3.2.0",
     "mocha-lcov-reporter": "^1.2.0",
     "nyc": "^10.1.2",
+    "prettier": "^1.19.1",
     "webpack": "^2.2.1"
   }
 }
