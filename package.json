@@ -7,7 +7,7 @@
     "build": "npm run build-plain && npm run build-min",
     "build-plain": "webpack",
     "build-min": "NODE_ENV=production webpack",
-    "test": "mocha --compilers js:babel-register src/*test.js",
+    "test": "mocha --require babel-register src/*test.js",
     "cover": "nyc npm test && nyc report --reporter=text-lcov --reporter=lcov",
     "coveralls": "npm run cover | coveralls",
     "format": "prettier --write src/**"
@@ -39,11 +39,11 @@
     "babel-loader": "^6.3.2",
     "babel-preset-env": "^1.1.8",
     "babel-register": "^6.23.0",
-    "coveralls": "^2.11.16",
+    "coveralls": "^3.0.9",
     "expect.js": "^0.3.1",
-    "mocha": "^3.2.0",
+    "mocha": "^6.2.2",
     "mocha-lcov-reporter": "^1.2.0",
-    "nyc": "^10.1.2",
+    "nyc": "^14.1.1",
     "prettier": "^1.19.1",
     "webpack": "^2.2.1"
   }
