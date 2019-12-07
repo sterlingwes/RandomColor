@@ -86,17 +86,35 @@ module.exports = function (h, s, v) {
 
   switch (hi) {
     case 0:
-      r = v;g = t;b = p;break;
+      r = v;
+      g = t;
+      b = p;
+      break;
     case 1:
-      r = q;g = v;b = p;break;
+      r = q;
+      g = v;
+      b = p;
+      break;
     case 2:
-      r = p;g = v;b = t;break;
+      r = p;
+      g = v;
+      b = t;
+      break;
     case 3:
-      r = p;g = q;b = v;break;
+      r = p;
+      g = q;
+      b = v;
+      break;
     case 4:
-      r = t;g = p;b = v;break;
+      r = t;
+      g = p;
+      b = v;
+      break;
     case 5:
-      r = v;g = p;b = q;break;
+      r = v;
+      g = p;
+      b = q;
+      break;
   }
   return [Math.floor(r * 255), Math.floor(g * 255), Math.floor(b * 255)];
 };
