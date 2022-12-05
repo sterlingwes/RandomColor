@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/sterlingwes/RandomColor#readme",
   "devDependencies": {
-    "babel-loader": "^6.3.2",
+    "babel-loader": "^9.1.0",
     "babel-preset-env": "^1.1.8",
     "babel-register": "^6.23.0",
     "coveralls": "^3.0.9",
@@ -45,6 +45,6 @@
     "mocha-lcov-reporter": "^1.2.0",
     "nyc": "^14.1.1",
     "prettier": "^1.19.1",
-    "webpack": "^2.2.1"
+    "webpack": "^5.75.0"
   }
 }
